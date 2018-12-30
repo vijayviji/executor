@@ -47,6 +47,12 @@ Enjoy!
     // taskStatus can be any of executor.TaskNotStarted, executor.TaskStarted, executor.TaskDone
     taskStatus := future.GetStatus()
 
+* Shutdown an executor (and all its backing threads):
+    ```go
+    ex.Shutdown()
+    // This function would only return after all the threads are shut down.
+    ```
+
 * Running test on executor.go
     ```make
     make test
