@@ -30,8 +30,8 @@ func initiatorTask(data interface{}, aThreadID int, aTaskID uint64) {
 }
 
 func main() {
-	initiators := Executor{}
-	workers := Executor{}
+	initiators := executor.Executor{}
+	workers := executor.Executor{}
 
 	runtime.GOMAXPROCS(18)
 	workers.newFixedThreadPool(7, 100, nil)
