@@ -37,7 +37,7 @@ func (ex *Executor) newFixedThreadPool(poolSize uint32, qSize uint32, data inter
 	ex.taskQueue = make(chan ExecutorTask, qSize)
 
 	for i := uint32(0); i < poolSize; i++ {
-		go taskLoop(ex, i+1)
+		go taskLoop(ex, int(i+1))
 	}
 }
 
