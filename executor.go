@@ -28,11 +28,11 @@ func taskLoop(ex *Executor, fakeThreadID int) {
 	}
 }
 
-func (ex *Executor) newSingleThreadExecutor(qSize uint32, data interface{}) {
-	ex.newFixedThreadPool(1, qSize, data)
+func (ex *Executor) NewSingleThreadExecutor(qSize uint32, data interface{}) {
+	ex.NewFixedThreadPool(1, qSize, data)
 }
 
-func (ex *Executor) newFixedThreadPool(poolSize uint32, qSize uint32, data interface{}) {
+func (ex *Executor) NewFixedThreadPool(poolSize uint32, qSize uint32, data interface{}) {
 	ex.data = data
 	ex.taskQueue = make(chan ExecutorTask, qSize)
 
@@ -41,6 +41,6 @@ func (ex *Executor) newFixedThreadPool(poolSize uint32, qSize uint32, data inter
 	}
 }
 
-func (ex *Executor) submit(task ExecutorTask) {
+func (ex *Executor) Submit(task ExecutorTask) {
 	ex.taskQueue <- task
 }
