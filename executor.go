@@ -83,6 +83,7 @@ func (th *executorThread) startTaskLoop() {
 
 	taskID := uint64(0)
 
+	fmt.Println("Starting task loop for thread", th.name)
 	for {
 		select {
 		case task := <-th.taskQueue:
