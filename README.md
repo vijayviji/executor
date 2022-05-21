@@ -17,7 +17,7 @@ Enjoy!
     ```
 * Create an executor backed by a single thread:
    ```go
-   ex := executor.NewSingleThreadPool("executorName", 200)
+   ex := executor.NewSingleThreadExecutor("executorName", 200)
    // 200 = Task Queue Size
    ```
 
